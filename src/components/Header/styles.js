@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { COLORS } from '../../App';
 
 const StyledHeaderContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
+	width: 80%;
+	padding: 15px;
 `;
 
 const StyledTitleContainer = styled.div`
@@ -13,12 +15,13 @@ const StyledTitleContainer = styled.div`
 	flex-direction: column;
 `;
 const StyledTitleHeader = styled.h1`
-	color: white;
+	color: ${({ dark }) => (dark ? COLORS.colordark : COLORS.colorlight)};
 	font-size: 1.2rem;
 `;
 
 const StyledSubTitle = styled.div`
-	color: #8c98c6;
+	color: ${({ dark }) =>
+		dark ? COLORS.subtitlecolordark : COLORS.subtitlecolorlight};
 	font-size: 0.9rem;
 `;
 const StyledToggleButton = styled.div`
@@ -30,7 +33,7 @@ const StyledToggleButton = styled.div`
 
 const StyledLabel = styled.label`
 	display: block;
-	background-color: green;
+	background-image: linear-gradient(45deg, #40db82 50%, #388fe7 100%);
 	width: 50px;
 	height: 30px;
 	border-radius: 50px;
@@ -38,12 +41,13 @@ const StyledLabel = styled.label`
 
 	&::after {
 		content: '';
-		width: 30px;
-		height: 30px;
+		width: 28px;
+		height: 28px;
+		top: 1px;
 		border-radius: 50%;
 		background-color: black;
 		position: absolute;
-		left: 0;
+		left: 1px;
 	}
 `;
 
@@ -52,11 +56,12 @@ const StyledInput = styled.input`
 
 	&:checked + ${StyledLabel}::after {
 		transition: transform;
-		transform: translateX(20px);
+		transform: translateX(19px);
 		transition-duration: 0.5s;
 	}
 	&:checked + ${StyledLabel} {
-		background-color: grey;
+		background-color: #979797;
+		background-image: none;
 	}
 `;
 

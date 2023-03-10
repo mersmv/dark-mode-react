@@ -1,7 +1,7 @@
 import { StyledIcon } from './styles';
 
-const Icon = () => {
-	return <StyledIcon />;
+const Icon = ({ img }) => {
+	return <StyledIcon src={img} />;
 };
 
 export default Icon;

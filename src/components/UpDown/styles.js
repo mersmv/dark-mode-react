@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div`
 	display: flex;
+	align-items: center;
 	gap: 5px;
 `;
 
-const StyledImg = styled.div`
-	width: 20px;
-	height: 20px;
+const StyledImg = styled.img`
+	width: 9px;
+	height: 9px;
 `;
 
 const StyledWords = styled.p`

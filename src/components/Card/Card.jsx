@@ -1,5 +1,5 @@
 import Icon from '../Icon/Icon';
-import UpDown from '../UpDown/UpDowm';
+import UpDown from '../UpDown/UpDown';
 import {
 	StyledAt,
 	StyledCard,
@@ -15,19 +15,19 @@ const Card = ({
 	followers,
 	updown,
 	icon,
-	colordark,
-	bgcolordark,
+	dark,
 	updowncolor,
 	barcolor
 }) => {
+	console.log(img);
 	return (
-		<StyledCard bgcolor={bgcolordark}>
+		<StyledCard dark={dark}>
 			<StyledSocialMedia>
-				<Icon src={img} alt='Icono' />
+				<Icon img={img} alt='Icono' />
 				<StyledAt>{at}</StyledAt>
 			</StyledSocialMedia>
 			<StyledFollowersContainer>
-				<StyledFollowers colordark={colordark}>{followers}</StyledFollowers>
+				<StyledFollowers dark={dark}>{followers}</StyledFollowers>
 				<StyledFollowersTitle>FOLLOWERS</StyledFollowersTitle>
 			</StyledFollowersContainer>
 			<UpDown updowncolor={updowncolor} updown={updown} icon={icon} />

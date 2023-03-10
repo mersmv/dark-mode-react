@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../App';
 
 const StyledCard = styled.div`
 	display: flex;
@@ -10,7 +11,8 @@ const StyledCard = styled.div`
 	align-items: center;
 	text-align: center;
 	border-radius: 10px;
-	background-color: ${({ bgcolor }) => bgcolor};
+	background-color: ${({ dark }) =>
+		dark ? COLORS.bgcolordark : COLORS.bgcolorlight};
 `;
 
 const StyledSocialMedia = styled.div`
@@ -22,7 +24,8 @@ const StyledSocialMedia = styled.div`
 
 const StyledAt = styled.p`
 	font-size: 1rem;
-	color: #8c98c6;
+	color: ${({ dark }) =>
+		dark ? COLORS.subtitlecolordark : COLORS.subtitlecolorlight};
 `;
 
 const StyledFollowersContainer = styled.div`
@@ -32,14 +35,15 @@ const StyledFollowersContainer = styled.div`
 const StyledFollowers = styled.h1`
 	font-size: 2.5rem;
 	margin: 0;
-	color: ${({ colordark }) => colordark};
+	color: ${({ dark }) => (dark ? COLORS.colordark : COLORS.colorlight)};
 `;
 
 const StyledFollowersTitle = styled.p`
 	font-size: 1.2rem;
 	margin: 0;
 	letter-spacing: 5px;
-	color: #8c98c6;
+	color: ${({ dark }) =>
+		dark ? COLORS.subtitlecolordark : COLORS.subtitlecolorlight};
 `;
 
 export {

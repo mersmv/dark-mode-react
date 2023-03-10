@@ -1,3 +1,5 @@
+import { CARDS } from '../../App';
+
 import {
 	StyledHeaderContainer,
 	StyledInput,
@@ -8,18 +10,29 @@ import {
 	StyledToggleButton
 } from './styles';
 
-const Header = () => {
+const totalFollowers = () => {
+	let followers = 0;
+	CARDS.map(card => {
+		followers = followers + Number(card.followers);
+	});
+
+	return followers;
+};
+
+const Header = ({ dark, setDark }) => {
 	return (
 		<StyledHeaderContainer>
 			<StyledTitleContainer>
-				<StyledTitleHeader>Social Media Dashboard</StyledTitleHeader>
-				<StyledSubTitle>Total Followers: 23,004</StyledSubTitle>
+				<StyledTitleHeader dark={dark}>
+					Social Media Dashboard
+				</StyledTitleHeader>
+				<StyledSubTitle>Total Followers: {totalFollowers()}</StyledSubTitle>
 			</StyledTitleContainer>
 			<StyledToggleButton>
-				<StyledSubTitle>Dark Mode</StyledSubTitle>
+				<StyledSubTitle>{dark ? 'Dark Mode' : 'Light Mode'}</StyledSubTitle>
 				<div>
 					<StyledInput type='checkbox' id='toggle' />
-					<StyledLabel htmlFor='toggle' />
+					<StyledLabel onClick={() => setDark(!dark)} htmlFor='toggle' />
 				</div>
 			</StyledToggleButton>
 		</StyledHeaderContainer>

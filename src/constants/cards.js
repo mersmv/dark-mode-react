@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-export const CARDS = [
+const CARDS = [
 	{
 		id: v4(),
 		img: '/public/images/icon-facebook.svg',
@@ -59,7 +59,7 @@ export const CARDS = [
 	}
 ];
 
-export const CARDS_OVERVIEW = [
+const CARDS_OVERVIEW = [
 	{
 		id: v4(),
 		title: 'Page Views',
@@ -131,3 +131,5 @@ export const CARDS_OVERVIEW = [
 		updowncolor: '#DC414C'
 	}
 ];
+
+export { CARDS, CARDS_OVERVIEW };
